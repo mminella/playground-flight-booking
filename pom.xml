@@ -17,15 +17,21 @@
 
 	<properties>
 		<java.version>17</java.version>
-		<!-- <spring-ai.version>0.8.1</spring-ai.version> -->
 		<spring-ai.version>1.0.0-SNAPSHOT</spring-ai.version>
 		<hilla.version>2.5.7</hilla.version>
+		<java-cfenv.version>3.0.0</java-cfenv.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.ai</groupId>
 			<artifactId>spring-ai-openai-spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.pivotal.cfenv</groupId>
+			<artifactId>java-cfenv-boot</artifactId>
+			<version>${java-cfenv.version}</version>
 		</dependency>
 
 		<!-- <dependency>

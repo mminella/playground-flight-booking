@@ -2,6 +2,7 @@ package ai.spring.demo.ai.playground;
 
 import java.io.IOException;
 
+import ai.spring.demo.ai.playground.config.SpringApplicationContextInitializer;
 import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.theme.Theme;
 import org.slf4j.Logger;
@@ -26,8 +27,10 @@ public class Application implements AppShellConfigurator {
 	private static final Logger logger = LoggerFactory.getLogger(Application.class);
 
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(Application.class).run(args);
-	}
+		new SpringApplicationBuilder(Application.class)
+				.initializers(new SpringApplicationContextInitializer())
+				.application()
+				.run(args);	}
 
 	// In the real world, ingesting documents would often happen separately, on a CI server or similar
 	@Bean
